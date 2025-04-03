@@ -38,126 +38,14 @@ header .container {
   font-size: 3.5rem;
   margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
+  color: #fff;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #00aaff;
+  color: #9c27b0; /* Midnight Purple */
 }
 
 nav ul {
   list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-nav ul li {
-  font-weight: bold;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #00aaff;
-}
-
-section {
-  padding: 80px 20px;
-  margin: 50px 0;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-ul {
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-ul li strong {
-  font-weight: bold;
-}
-
-footer {
-  background-color: #111;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-}
-
-footer a {
-  color: #00aaff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-#contact-form input,
-#contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin: 15px 0;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-#contact-form button {
-  width: 100%;
-  padding: 15px;
-  background-color: #00aaff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-#contact-form button:hover {
-  background-color: #0088cc;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.section {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@media (max-width: 768px) {
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-}
+  display
