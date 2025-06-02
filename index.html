@@ -4,23 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rehtse C. Cancino</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="overlay">
-    <div class="theme-toggle">
-      <label class="switch">
-        <input type="checkbox" id="toggleTheme" />
-        <span class="slider round"></span>
-      </label>
-    </div>
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="toggleTheme" />
+      <span class="slider round"></span>
+    </label>
+  </div>
 
-    <div class="container">
-      <div id="lottie" class="lottie-animation"></div>
-      <h1>Site Under Construction</h1>
-      <p>Currently procrastinating. Check back soon!</p>
-    </div>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div id="lottie" class="lottie-animation"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+
+  <!-- Main Site Content (Hidden initially) -->
+  <div class="main-content" id="mainContent">
+    <h1>Site Under Construction</h1>
+    <p>Currently procrastinating. Check back soon.</p>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
