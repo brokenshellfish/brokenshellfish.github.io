@@ -1,0 +1,29 @@
+// Load the Lottie animation
+lottie.loadAnimation({
+  container: document.getElementById('lottie'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
+});
+
+const toggle = document.getElementById('toggleTheme');
+const htmlEl = document.documentElement;
+
+// Load saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  htmlEl.classList.add('light-mode');
+  toggle.checked = true;
+}
+
+// Update theme on toggle
+toggle.addEventListener('change', () => {
+  if (toggle.checked) {
+    htmlEl.classList.add('light-mode');
+    localStorage.setItem('theme', 'light');
+  } else {
+    htmlEl.classList.remove('light-mode');
+    localStorage.setItem('theme', 'dark');
+  }
+});
