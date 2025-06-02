@@ -1,31 +1,143 @@
-<script>
-  // Load the Lottie animation
-  lottie.loadAnimation({
-    container: document.getElementById('lottie'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
-  });
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
-  const toggle = document.getElementById('toggleTheme');
-  const htmlEl = document.documentElement;
+/* Theme Variables */
+:root {
+  --bg-color: #0d1117;
+  --overlay-color: rgba(0, 0, 0, 0.6);
+  --text-color: #ffffff;
+  --accent-color: #00e5ff;
+  --subtext-color: #cccccc;
+}
 
-  // Load saved theme preference
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'light') {
-    htmlEl.classList.add('light-mode');
-    toggle.checked = true;
+.light-mode {
+  --bg-color: #f1f5f9;
+  --overlay-color: rgba(255, 255, 255, 0.6);
+  --text-color: #111;
+  --accent-color: #0077ff;
+  --subtext-color: #444;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.overlay {
+  background: var(--overlay-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  max-width: 700px;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  width: 100%;
+}
+
+.lottie-animation {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 30px;
+  filter: drop-shadow(0 0 12px var(--accent-color));
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px var(--accent-color);
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: var(--subtext-color);
+  margin-top: 10px;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #888;
+  transition: 0.4s;
+  border-radius: 28px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px; width: 20px;
+  left: 4px; bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* 🔧 Responsive Styles */
+@media (max-width: 600px) {
+  .lottie-animation {
+    width: 200px;
+    height: 200px;
   }
 
-  // Update theme on toggle
-  toggle.addEventListener('change', () => {
-    if (toggle.checked) {
-      htmlEl.classList.add('light-mode');
-      localStorage.setItem('theme', 'light');
-    } else {
-      htmlEl.classList.remove('light-mode');
-      localStorage.setItem('theme', 'dark');
-    }
-  });
-</script>
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+  }
+}
