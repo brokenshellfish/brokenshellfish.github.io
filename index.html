@@ -24,20 +24,10 @@
     </div>
   </div>
 
-  <script>
-    lottie.loadAnimation({
-      container: document.getElementById('lottie'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
-    });
+  <!-- Lottie animation library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
 
-    // Theme toggle logic
-    const toggle = document.getElementById('toggleTheme');
-    toggle.addEventListener('change', () => {
-      document.documentElement.classList.toggle('light-mode');
-    });
-  </script>
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
