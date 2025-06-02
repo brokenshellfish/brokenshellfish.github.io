@@ -1,23 +1,31 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Arial', sans-serif;
-  background: #0d1117;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<script>
+  // Load the Lottie animation
+  lottie.loadAnimation({
+    container: document.getElementById('lottie'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
+  });
 
-.container {
-  text-align: center;
-  max-width: 600px;
-  padding: 20px;
-}
+  const toggle = document.getElementById('toggleTheme');
+  const htmlEl = document.documentElement;
 
-.lottie-animation {
-  width: 300px;
-  height: 300px;
-  margin: 0 auto 30px;
-}
+  // Load saved theme preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    htmlEl.classList.add('light-mode');
+    toggle.checked = true;
+  }
+
+  // Update theme on toggle
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      htmlEl.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      htmlEl.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+</script>
