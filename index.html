@@ -10,10 +10,17 @@
 </head>
 <body>
   <div class="overlay">
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="toggleTheme" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
     <div class="container">
       <div id="lottie" class="lottie-animation"></div>
-      <h1>Site Under Construction</h1>
-      <p>Currently procrastinating. Check back soon!</p>
+      <h1>We're Building Something Awesome</h1>
+      <p>This site is under construction. Check back soon!</p>
     </div>
   </div>
 
@@ -23,7 +30,13 @@
       renderer: 'svg',
       loop: true,
       autoplay: true,
-      path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json' // Construction animation
+      path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
+    });
+
+    // Theme toggle logic
+    const toggle = document.getElementById('toggleTheme');
+    toggle.addEventListener('change', () => {
+      document.documentElement.classList.toggle('light-mode');
     });
   </script>
 </body>
