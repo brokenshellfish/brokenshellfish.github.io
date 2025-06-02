@@ -1,17 +1,17 @@
-// Load the Lottie animation
+// Load Lottie animation
 lottie.loadAnimation({
   container: document.getElementById('lottie'),
   renderer: 'svg',
   loop: true,
   autoplay: true,
-  path: 'https://assets10.lottiefiles.com/packages/lf20_ktwnwv5m.json'
+  path: 'https://assets6.lottiefiles.com/packages/lf20_usmfx6bp.json'
 });
 
+// Theme handling
 const toggle = document.getElementById('toggleTheme');
 const htmlEl = document.documentElement;
-
-// Load saved theme preference
 const savedTheme = localStorage.getItem('theme');
+
 if (savedTheme === 'light') {
   htmlEl.classList.remove('dark-mode');
   toggle.checked = true;
@@ -19,7 +19,6 @@ if (savedTheme === 'light') {
   htmlEl.classList.add('dark-mode');
 }
 
-// Update theme on toggle
 toggle.addEventListener('change', () => {
   if (toggle.checked) {
     htmlEl.classList.remove('dark-mode');
@@ -28,4 +27,18 @@ toggle.addEventListener('change', () => {
     htmlEl.classList.add('dark-mode');
     localStorage.setItem('theme', 'dark');
   }
+});
+
+// Show site after loading
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mainContent = document.getElementById('mainContent');
+
+    loadingScreen.style.opacity = '0';
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+      mainContent.style.display = 'flex';
+    }, 800);
+  }, 2000); // Delay before fade out
 });
